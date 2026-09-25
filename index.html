@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ka">
 <head>
@@ -13,10 +12,6 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================================================
-   ROOT
-========================================================= */
 
 :root{
     --bg:#070509;
@@ -37,11 +32,6 @@
     --shadow:
         0 35px 100px rgba(0,0,0,.55);
 }
-
-
-/* =========================================================
-   RESET
-========================================================= */
 
 *{
     box-sizing:border-box;
@@ -80,19 +70,11 @@ button{
     font:inherit;
 }
 
-
-/* =========================================================
-   GLOBAL EFFECTS
-========================================================= */
-
 .noise{
     position:fixed;
     inset:0;
-
     z-index:99999;
-
     pointer-events:none;
-
     opacity:.035;
 
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -101,9 +83,7 @@ button{
 .vignette{
     position:fixed;
     inset:0;
-
     z-index:9998;
-
     pointer-events:none;
 
     background:
@@ -116,14 +96,10 @@ button{
 
 .top-progress{
     position:fixed;
-
     top:0;
     left:0;
-
     height:3px;
-
     width:0;
-
     z-index:10000;
 
     background:
@@ -141,11 +117,6 @@ button{
         width .8s cubic-bezier(.16,1,.3,1);
 }
 
-
-/* =========================================================
-   SCENES
-========================================================= */
-
 .scene{
     min-height:100svh;
     width:100%;
@@ -157,8 +128,7 @@ button{
     align-items:center;
     justify-content:center;
 
-    padding:
-        50px 18px;
+    padding:50px 18px;
 
     overflow:hidden;
 }
@@ -189,60 +159,41 @@ button{
 
 .content{
     width:min(100%,900px);
-
     text-align:center;
-
     position:relative;
-
     z-index:10;
 }
 
 .eyebrow{
     margin-bottom:20px;
-
     color:var(--gold);
-
     text-transform:uppercase;
-
     letter-spacing:4px;
-
     font-size:10px;
 }
 
 h1,
 h2{
     font-family:"Playfair Display",serif;
-
     font-weight:500;
-
     letter-spacing:-2px;
 }
 
 h1{
-    font-size:
-        clamp(55px,11vw,110px);
-
+    font-size:clamp(55px,11vw,110px);
     line-height:.95;
 }
 
 h2{
-    font-size:
-        clamp(38px,7vw,75px);
-
+    font-size:clamp(38px,7vw,75px);
     line-height:1;
 }
 
 .subtitle{
     max-width:650px;
-
-    margin:
-        25px auto;
-
+    margin:25px auto;
     color:var(--muted);
-
-    font-size:
-        clamp(15px,2.5vw,19px);
-
+    font-size:clamp(15px,2.5vw,19px);
     line-height:1.85;
 }
 
@@ -272,20 +223,11 @@ h2{
     }
 }
 
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
 .buttons{
     display:flex;
-
     justify-content:center;
-
     flex-wrap:wrap;
-
     gap:12px;
-
     margin-top:30px;
 }
 
@@ -303,8 +245,7 @@ h2{
 
     border-radius:999px;
 
-    padding:
-        15px 25px;
+    padding:15px 25px;
 
     cursor:pointer;
 
@@ -314,21 +255,18 @@ h2{
         transform .35s cubic-bezier(.16,1,.3,1),
         border-color .35s,
         box-shadow .35s,
-        background .35s;
+        background .35s,
+        opacity .35s;
 
     overflow:hidden;
 }
 
 .btn::before{
     content:"";
-
     position:absolute;
-
     top:0;
     bottom:0;
-
     width:50%;
-
     left:-70%;
 
     background:
@@ -340,9 +278,7 @@ h2{
         );
 
     transform:skewX(-20deg);
-
-    transition:
-        left .8s;
+    transition:left .8s;
 }
 
 .btn:hover::before{
@@ -379,16 +315,25 @@ h2{
         rgba(217,70,104,.2);
 }
 
+.btn:disabled{
+    opacity:.32;
+    cursor:not-allowed;
+    pointer-events:none;
+    box-shadow:none;
+    transform:none;
+}
 
-/* =========================================================
-   STARS
-========================================================= */
+.hint-locked{
+    margin-top:14px;
+    color:var(--muted);
+    font-size:12px;
+    letter-spacing:.5px;
+    opacity:.8;
+}
 
 .stars{
     position:absolute;
-
     inset:0;
-
     pointer-events:none;
 }
 
@@ -423,11 +368,6 @@ h2{
         transform:scale(1.5);
     }
 }
-
-
-/* =========================================================
-   INTRO ORB
-========================================================= */
 
 .intro-orb{
     position:absolute;
@@ -464,18 +404,10 @@ h2{
     }
 }
 
-
-/* =========================================================
-   LETTER INTRO
-========================================================= */
-
 .letter-intro{
     width:min(100%,650px);
-
     margin:auto;
-
-    padding:
-        40px 30px;
+    padding:40px 30px;
 
     border:
         1px solid
@@ -498,7 +430,6 @@ h2{
 
 .letter-line{
     opacity:0;
-
     transform:translateY(15px);
 
     animation:
@@ -507,27 +438,14 @@ h2{
         forwards;
 
     margin:12px 0;
-
     color:#e9dfe3;
-
     line-height:1.8;
 }
 
-.letter-line:nth-child(1){
-    animation-delay:.2s;
-}
-
-.letter-line:nth-child(2){
-    animation-delay:.8s;
-}
-
-.letter-line:nth-child(3){
-    animation-delay:1.4s;
-}
-
-.letter-line:nth-child(4){
-    animation-delay:2s;
-}
+.letter-line:nth-child(1){animation-delay:.2s;}
+.letter-line:nth-child(2){animation-delay:.8s;}
+.letter-line:nth-child(3){animation-delay:1.4s;}
+.letter-line:nth-child(4){animation-delay:2s;}
 
 @keyframes letterAppear{
 
@@ -537,18 +455,11 @@ h2{
     }
 }
 
-
-/* =========================================================
-   CITY / CAR
-========================================================= */
-
 .city{
     position:absolute;
-
     left:0;
     right:0;
     bottom:0;
-
     height:40%;
 
     background:
@@ -592,12 +503,9 @@ h2{
 
 .streetlight{
     position:absolute;
-
     bottom:30%;
-
     width:3px;
     height:150px;
-
     background:#4c454a;
 }
 
@@ -624,7 +532,6 @@ h2{
     position:absolute;
 
     bottom:18%;
-
     left:-230px;
 
     width:180px;
@@ -708,30 +615,18 @@ h2{
         5px solid #333;
 }
 
-.w1{
-    left:25px;
-}
-
-.w2{
-    right:25px;
-}
+.w1{left:25px;}
+.w2{right:25px;}
 
 @keyframes drive{
 
     to{
-        left:
-            calc(100% + 250px);
+        left:calc(100% + 250px);
     }
 }
 
-
-/* =========================================================
-   RESTAURANT
-========================================================= */
-
 .restaurant-bg{
     position:absolute;
-
     inset:0;
 
     background:
@@ -750,9 +645,7 @@ h2{
 
 .restaurant-bg::after{
     content:"";
-
     position:absolute;
-
     inset:0;
 
     background:
@@ -770,8 +663,7 @@ h2{
 
     min-height:185px;
 
-    margin:
-        35px auto;
+    margin:35px auto;
 
     border:
         1px solid
@@ -811,11 +703,9 @@ h2{
     border-radius:50%;
 
     display:grid;
-
     place-items:center;
 
     color:#c8b8be;
-
     font-size:12px;
 }
 
@@ -825,8 +715,7 @@ h2{
     top:22px;
     left:50%;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     width:8px;
     height:26px;
@@ -876,11 +765,6 @@ h2{
     }
 }
 
-
-/* =========================================================
-   MENU
-========================================================= */
-
 .menu-grid{
     display:grid;
 
@@ -895,8 +779,7 @@ h2{
 .menu-card{
     min-height:150px;
 
-    padding:
-        20px 15px;
+    padding:20px 15px;
 
     border:
         1px solid
@@ -930,8 +813,7 @@ h2{
 }
 
 .menu-card:hover{
-    transform:
-        translateY(-7px);
+    transform:translateY(-7px);
 
     background:
         rgba(255,255,255,.09);
@@ -968,27 +850,16 @@ h2{
     color:var(--muted);
 }
 
-
-/* =========================================================
-   ANGER
-========================================================= */
-
 .meter-wrap{
     width:min(100%,520px);
-
-    margin:
-        35px auto;
+    margin:35px auto;
 }
 
 .meter-label{
     display:flex;
-
     justify-content:space-between;
-
     margin-bottom:10px;
-
     color:var(--muted);
-
     font-size:13px;
 }
 
@@ -1009,7 +880,6 @@ h2{
 
 .meter-fill{
     width:100%;
-
     height:100%;
 
     background:
@@ -1024,11 +894,6 @@ h2{
         width 1.3s
         cubic-bezier(.16,1,.3,1);
 }
-
-
-/* =========================================================
-   QUIZ
-========================================================= */
 
 .quiz-card{
     width:min(100%,620px);
@@ -1054,9 +919,7 @@ h2{
 
 .answers{
     display:grid;
-
     gap:12px;
-
     margin-top:25px;
 }
 
@@ -1080,8 +943,7 @@ h2{
 }
 
 .answer:hover{
-    transform:
-        translateY(-2px);
+    transform:translateY(-2px);
 
     border-color:
         var(--pink);
@@ -1098,19 +960,13 @@ h2{
         rgba(217,70,104,.13);
 }
 
-
-/* =========================================================
-   SIMPLE ENVELOPE
-========================================================= */
-
 .envelope{
     width:320px;
     height:210px;
 
     position:relative;
 
-    margin:
-        55px auto 35px;
+    margin:55px auto 35px;
 
     cursor:pointer;
 
@@ -1118,7 +974,7 @@ h2{
         transform .45s
         cubic-bezier(.16,1,.3,1),
         filter .45s;
-    
+
     filter:
         drop-shadow(
             0 30px 50px
@@ -1139,13 +995,11 @@ h2{
 }
 
 .envelope:active{
-    transform:
-        scale(.97);
+    transform:scale(.97);
 }
 
 .env-body{
     position:absolute;
-
     inset:0;
 
     overflow:hidden;
@@ -1188,22 +1042,17 @@ h2{
 .env-body::before{
     left:-5%;
     top:48%;
-
-    transform:
-        rotate(32deg);
+    transform:rotate(32deg);
 }
 
 .env-body::after{
     right:-5%;
     top:48%;
-
-    transform:
-        rotate(-32deg);
+    transform:rotate(-32deg);
 }
 
 .env-flap{
     position:absolute;
-
     z-index:3;
 
     top:0;
@@ -1236,7 +1085,6 @@ h2{
 
 .env-seal{
     position:absolute;
-
     z-index:5;
 
     left:50%;
@@ -1245,11 +1093,9 @@ h2{
     width:52px;
     height:52px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     display:grid;
-
     place-items:center;
 
     border-radius:50%;
@@ -1289,16 +1135,14 @@ h2{
 }
 
 .envelope::after{
-    content:
-        "დააჭირე ❤️";
+    content:"დააჭირე ❤️";
 
     position:absolute;
 
     left:50%;
     bottom:-38px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     white-space:nowrap;
 
@@ -1306,18 +1150,11 @@ h2{
         rgba(255,255,255,.55);
 
     font-size:12px;
-
     letter-spacing:1px;
 }
 
-
-/* =========================================================
-   LETTER MODAL
-========================================================= */
-
 .letter-modal{
     position:fixed;
-
     inset:0;
 
     z-index:20000;
@@ -1330,7 +1167,6 @@ h2{
     padding:20px;
 
     opacity:0;
-
     visibility:hidden;
 
     transition:
@@ -1340,13 +1176,11 @@ h2{
 
 .letter-modal.show{
     opacity:1;
-
     visibility:visible;
 }
 
 .letter-backdrop{
     position:absolute;
-
     inset:0;
 
     background:
@@ -1356,19 +1190,16 @@ h2{
             rgba(0,0,0,.84)
         );
 
-    backdrop-filter:
-        blur(13px);
+    backdrop-filter:blur(13px);
 }
 
 .letter-window{
     position:relative;
-
     z-index:2;
 
     width:min(100%,560px);
 
-    padding:
-        42px 32px 35px;
+    padding:42px 32px 35px;
 
     border-radius:30px;
 
@@ -1453,11 +1284,9 @@ h2{
     width:72px;
     height:72px;
 
-    margin:
-        0 auto 20px;
+    margin:0 auto 20px;
 
     display:grid;
-
     place-items:center;
 
     border-radius:50%;
@@ -1498,46 +1327,26 @@ h2{
 }
 
 .letter-eyebrow{
-    color:
-        var(--gold);
-
-    text-transform:
-        uppercase;
-
-    letter-spacing:
-        3px;
-
-    font-size:
-        10px;
-
-    margin-bottom:
-        14px;
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:10px;
+    margin-bottom:14px;
 }
 
 .letter-window h2{
-    font-family:
-        "Playfair Display",serif;
-
-    font-size:
-        clamp(28px,6vw,43px);
-
-    font-weight:
-        500;
-
-    line-height:
-        1.15;
+    font-family:"Playfair Display",serif;
+    font-size:clamp(28px,6vw,43px);
+    font-weight:500;
+    line-height:1.15;
 }
 
 .letter-divider{
     display:flex;
-
     align-items:center;
     justify-content:center;
-
     gap:12px;
-
-    margin:
-        24px 0;
+    margin:24px 0;
 }
 
 .letter-divider::before,
@@ -1556,82 +1365,72 @@ h2{
 }
 
 .letter-divider::after{
-    transform:
-        rotate(180deg);
+    transform:rotate(180deg);
 }
 
 .letter-divider span{
-    color:
-        #ff8fa9;
-
-    font-size:
-        18px;
+    color:#ff8fa9;
+    font-size:18px;
 }
 
 .letter-text{
-    color:
-        #cdbfc5;
+    color:#cdbfc5;
 
-    font-family:
-        "Playfair Display",serif;
+    font-family:"Playfair Display",serif;
 
-    font-size:
-        clamp(15px,3vw,18px);
+    font-size:clamp(15px,3vw,18px);
 
-    line-height:
-        1.8;
+    line-height:1.8;
 }
 
 .letter-text p{
-    margin:
-        8px 0;
+    margin:8px 0;
 }
 
 .letter-special{
-    margin-top:
-        20px!important;
+    margin-top:20px!important;
 
-    color:
-        #fff1f4;
+    color:#fff1f4;
 
-    font-size:
-        clamp(18px,3.5vw,23px);
+    font-size:clamp(18px,3.5vw,23px);
 
-    line-height:
-        1.6;
+    line-height:1.6;
 }
 
 .letter-button{
-    margin-top:
-        27px;
+    margin-top:27px;
 }
 
 
 /* =========================================================
-   MEMORIES
+   MEMORIES — 4 PHOTOS
 ========================================================= */
 
 .memory-wall{
     display:grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(2,1fr);
 
     gap:18px;
 
     margin-top:30px;
+
+    width:min(100%,760px);
+
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .memory{
-    min-height:215px;
+    min-height:270px;
 
     padding:
         10px 10px 35px;
 
     border-radius:8px;
 
-    background:
-        #eee5dc;
+    background:#eee5dc;
 
     color:#36282c;
 
@@ -1648,21 +1447,23 @@ h2{
 .memory:hover{
     transform:
         rotate(0)
-        scale(1.05);
+        scale(1.04);
 
     z-index:3;
 }
 
 .memory-photo{
-    height:170px;
+    width:100%;
+
+    height:220px;
 
     border-radius:4px;
 
-    display:grid;
+    display:flex;
 
-    place-items:center;
+    align-items:center;
 
-    font-size:40px;
+    justify-content:center;
 
     background:
         linear-gradient(
@@ -1675,10 +1476,16 @@ h2{
 }
 
 .memory-photo img{
+    display:block;
+
     width:100%;
     height:100%;
-    object-fit:cover;
-    display:block;
+
+    object-fit:contain;
+
+    object-position:center;
+
+    background:#181118;
 }
 
 .memory p{
@@ -1691,11 +1498,6 @@ h2{
 
     font-size:12px;
 }
-
-
-/* =========================================================
-   FINAL
-========================================================= */
 
 .final-heart{
     font-size:100px;
@@ -1731,11 +1533,6 @@ h2{
     }
 }
 
-
-/* =========================================================
-   CONFETTI
-========================================================= */
-
 .confetti{
     position:fixed;
 
@@ -1763,11 +1560,6 @@ h2{
     }
 }
 
-
-/* =========================================================
-   TOAST
-========================================================= */
-
 .toast{
     position:fixed;
 
@@ -1779,8 +1571,7 @@ h2{
     transform:
         translate(-50%,30px);
 
-    padding:
-        13px 20px;
+    padding:13px 20px;
 
     border:
         1px solid
@@ -1791,8 +1582,7 @@ h2{
     background:
         rgba(20,10,15,.85);
 
-    backdrop-filter:
-        blur(20px);
+    backdrop-filter:blur(20px);
 
     color:white;
 
@@ -1812,16 +1602,10 @@ h2{
         translate(-50%,0);
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
 @media(max-width:650px){
 
     .scene{
-        padding:
-            35px 15px;
+        padding:35px 15px;
     }
 
     h1{
@@ -1850,17 +1634,25 @@ h2{
         height:90px;
     }
 
+    /* 4 ფოტო — მობილურზეც 2x2 */
     .memory-wall{
         grid-template-columns:
             1fr 1fr;
+
+        gap:12px;
     }
 
     .memory{
-        min-height:165px;
+        min-height:185px;
+        padding:7px 7px 25px;
     }
 
     .memory-photo{
-        height:125px;
+        height:145px;
+    }
+
+    .memory p{
+        font-size:11px;
     }
 
     .envelope{
@@ -1888,8 +1680,7 @@ h2{
     }
 
     .letter-divider{
-        margin:
-            18px 0;
+        margin:18px 0;
     }
 
     .letter-divider::before,
@@ -1898,10 +1689,20 @@ h2{
     }
 }
 
+@media(max-width:380px){
 
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
+    .memory-wall{
+        grid-template-columns:1fr;
+    }
+
+    .memory{
+        min-height:240px;
+    }
+
+    .memory-photo{
+        height:195px;
+    }
+}
 
 @media(prefers-reduced-motion:reduce){
 
@@ -1909,1353 +1710,1226 @@ h2{
     *::before,
     *::after{
 
-        animation-duration:
-            .01ms!important;
+        animation-duration:.01ms!important;
 
-        animation-iteration-count:
-            1!important;
+        animation-iteration-count:1!important;
 
-        transition-duration:
-            .01ms!important;
+        transition-duration:.01ms!important;
 
-        scroll-behavior:
-            auto!important;
+        scroll-behavior:auto!important;
     }
 }
 
 </style>
-</head>
 
+</head>
 
 <body>
 
 <div id="app">
 
-    <div class="noise"></div>
+<div class="noise"></div>
+<div class="vignette"></div>
 
-    <div class="vignette"></div>
+<div
+    class="top-progress"
+    id="progress">
+</div>
 
-    <div
-        class="top-progress"
-        id="progress">
+<!-- =====================================================
+     SCENE 1
+====================================================== -->
+
+<section class="scene active" id="s1">
+
+<div class="intro-orb"></div>
+
+<div class="stars" id="stars"></div>
+
+<div class="content">
+
+    <div class="eyebrow">
+        just two minutes
     </div>
 
+    <h1>
+        Okay<span class="highlight">...</span>
+    </h1>
 
-    <!-- =====================================================
-         SCENE 1 — INTRO
-    ====================================================== -->
+    <p class="subtitle">
+        ვიცი, რომ გაბრაზებული ხარ.
+        <br>
+        და სანამ რამეს მეტყვი...
+    </p>
 
-    <section
-        class="scene active"
-        id="s1">
+    <div class="buttons">
 
-        <div class="intro-orb"></div>
+        <button
+            class="btn primary"
+            onclick="next(2)">
 
-        <div
-            class="stars"
-            id="stars">
-        </div>
+            მომისმენ? 🥺
 
-        <div class="content">
+        </button>
 
-            <div class="eyebrow">
-                just two minutes
-            </div>
-
-            <h1>
-                Okay<span class="highlight">...</span>
-            </h1>
-
-            <p class="subtitle">
-                ვიცი, რომ გაბრაზებული ხარ.
-                <br>
-                და სანამ რამეს მეტყვი...
-            </p>
-
-            <div class="buttons">
-
-                <button
-                    class="btn primary"
-                    onclick="next(2)">
-
-                    მომისმენ? 🥺
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SCENE 2 — APOLOGY
-    ====================================================== -->
-
-    <section
-        class="scene"
-        id="s2">
-
-        <div class="content">
-
-            <div class="eyebrow">
-                chapter 01
-            </div>
-
-            <div class="letter-intro">
-
-                <div class="letter-line">
-                    მე არ მინდა უბრალოდ
-                    "ბოდიში" გითხრა.
-                </div>
-
-                <div class="letter-line">
-                    მინდა რაღაც გავაკეთო.
-                </div>
-
-                <div class="letter-line">
-                    ამიტომ...
-                </div>
-
-                <div class="letter-line">
-                    <strong class="highlight">
-                        დღეს შენ გეპატიჟები.
-                    </strong>
-                </div>
-
-            </div>
-
-            <div class="buttons">
-
-                <button
-                    class="btn primary"
-                    onclick="next(3)">
-
-                    რა მოიფიქრე? 👀
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SCENE 3 — CAR
-    ====================================================== -->
-
-    <section
-        class="scene"
-        id="s3">
-
-        <div class="city"></div>
-
-        <div
-            class="streetlight"
-            style="left:18%">
-        </div>
-
-        <div
-            class="streetlight"
-            style="left:72%">
-        </div>
-
-        <div class="car">
-
-            <div class="wheel w1"></div>
-            <div class="wheel w2"></div>
-
-        </div>
-
-        <div class="content">
-
-            <div class="eyebrow">
-                chapter 02 · tonight
-            </div>
-
-            <h2>
-                მანქანა მზად არის.
-            </h2>
-
-            <p class="subtitle">
-
-                რესტორანი — დაჯავშნილია.
-                <br>
-
-                შენი ადგილი —
-                <strong>ჩემ გვერდით.</strong>
-
-            </p>
-
-            <button
-                class="btn primary"
-                onclick="next(4)">
-
-                წავედით 🚗❤️
-
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SCENE 4 — PLAYLIST
-    ====================================================== -->
-
-    <section
-        class="scene"
-        id="s4">
-
-        <div class="stars"></div>
-
-        <div class="content">
-
-            <div class="eyebrow">
-                chapter 03 · the drive
-            </div>
-
-            <h2>
-                საღამოს playlist
-            </h2>
-
-            <p class="subtitle">
-                გზასაც თავისი მუსიკა უნდა ჰქონდეს.
-            </p>
-
-            <div class="buttons">
-
-                <button
-                    class="btn"
-                    onclick="musicChoice('ჩვენი სიმღერა')">
-
-                    🎵 ჩვენი სიმღერა
-
-                </button>
-
-                <button
-                    class="btn"
-                    onclick="musicChoice('მშვიდობა')">
-
-                    🌙 Mood: მშვიდობა
-
-                </button>
-
-                <button
-                    class="btn"
-                    onclick="musicChoice('გაბრაზებული')">
-
-                    😒 ჯერ კიდევ გაბრაზებული ვარ
-
-                </button>
-
-            </div>
-
-            <div class="buttons">
-
-                <button
-                    class="btn primary"
-                    onclick="next(5)">
-
-                    მივედით 🚗
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SCENE 5 — RESTAURANT
-    ====================================================== -->
-
-    <section
-        class="scene"
-        id="s5">
-
-        <div class="restaurant-bg"></div>
-
-        <div class="content">
-
-            <div class="eyebrow">
-                chapter 04 · restaurant
-            </div>
-
-            <h2>
-                კეთილი იყოს შენი
-                <br>
-                მობრძანება.
-            </h2>
-
-            <div class="table">
-
-                <div class="chair">
-                    შენი ადგილი ❤️
-                </div>
-
-                <div class="candle">
-                    <div class="flame"></div>
-                </div>
-
-                <div class="chair">
-                    ჩემი ადგილი 😌
-                </div>
-
-            </div>
-
-            <p class="subtitle">
-
-                მაგრამ დღეს ერთი წესია...
-
-                <br>
-
-                <strong>
-                    შენ ირჩევ ყველაფერს.
-                </strong>
-
-            </p>
-
-            <button
-                class="btn primary"
-                onclick="next(6)">
-
-                დავიწყოთ 🍽️
-
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SCENE 6 — FOOD
-    ====================================================== -->
-
-    <section
-        class="scene"
-        id="s6">
-
-        <div class="content">
-
-            <div class="eyebrow">
-                chapter 05 · main course
-            </div>
-
-            <h2>
-                რას შეჭამ?
-            </h2>
-
-            <div class="menu-grid">
-
-                <div
-                    class="menu-card"
-                    onclick="selectItem(this,'Pizza 🍕','food')">
-
-                    <div class="food-icon">
-                        🍕
-                    </div>
-
-                    <b>
-                        Pizza
-                    </b>
-
-                    <small>
-                        კლასიკური არჩევანი
-                    </small>
-
-                </div>
-
-
-                <div
-                    class="menu-card"
-                    onclick="selectItem(this,'Pasta 🍝','food')">
-
-                    <div class="food-icon">
-                        🍝
-                    </div>
-
-                    <b>
-                        Pasta
-                    </b>
-
-                    <small>
-                        იტალიური mood
-                    </small>
-
-                </div>
-
-
-                <div
-                    class="menu-card"
-                    onclick="selectItem(this,'Sushi 🍣','food')">
-
-                    <div class="food-icon">
-                        🍣
-                    </div>
-
-                    <b>
-                        Sushi
-                    </b>
-
-                    <small>
-                        დღეს ცოტა fancy
-                    </small>
-
-                </div>
-
-
-                <div
-                    class="menu-card"
-                    onclick="selectItem(this,'Burger 🍔','food')">
-
-                    <div class="food-icon">
-                        🍔
-                    </div>
-
-                    <b>
-                        Burger
-                    </b>
-
-                    <small>
-                        no regrets
-                    </small>
-
-                </div>
-
-
-                <div
-                    class="menu-card"
-                    onclick="selectItem(this,'Steak 🥩','food')">
-
-                    <div class="food-icon">
-                        🥩
-                    </div>
-
-                    <b>
-                        Steak
-                    </b>
-
-                    <small>
-                        premium choice
-                    </small>
-
-                </div>
-
-
-                <div
-                    class="menu-card"
-                    onclick="selectItem(this,'Fries 🍟','food')">
-
-                    <div class="food-icon">
-                        🍟
-                    </div>
-
-                    <b>
-                        Fries
-                    </b>
-
-                    <small>
-                        უბრალოდ იმიტომ 😂
-                    </small>
-
-                </div>
-
-            </div>
-
-            <div class="buttons">
-
-                <button
-                    class="btn primary"
-                    onclick="goNextAfterChoice(7)">
-
-                    ეს ავირჩიეთ ❤️
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SCENE 7 — DRINK
-    ====================================================== -->
-
-    <section
-        class="scene"
-        id="s7">
-
-        <div class="content">
-
-            <div class="eyebrow">
-                chapter 06 · drinks
-            </div>
-
-            <h2>
-                რას დავლევთ?
-            </h2>
-
-            <div class="menu-grid">
-
-                <div
-                    class="menu-card"
-                    onclick="selectItem(this,'Cola 🥤','drink')">
-
-                    <div class="food-icon">
-                        🥤
-                    </div>
-
-                    <b>
-                        Cola
-                    </b>
-
-                    <small>
-                        classic
-                    </small>
-
-                </div>
-
-
-                <div
-                    class="menu-card"
-                    onclick="selectItem(this,'Lemonade 🍋','drink')">
-
-                    <div class="food-icon">
-                        🍋
-                    </div>
-
-                    <b>
-                        Lemonade
-                    </b>
-
-                    <small>
-                        fresh
-                    </small>
-
-                </div>
-
-
-                <div
-                    class="menu-card"
-                    onclick="selectItem(this,'Juice 🧃','drink')">
-
-                    <div class="food-icon">
-                        🧃
-                    </div>
-
-                    <b>
-                        Juice
-                    </b>
-
-                    <small>
-                        sweet choice
-                    </small>
-
-                </div>
-
-
-                <div
-                    class="menu-card"
-                    onclick="selectItem(this,'Milkshake 🥛','drink')">
-
-                    <div class="food-icon">
-                        🥛
-                    </div>
-
-                    <b>
-                        Milkshake
-                    </b>
-
-                    <small>
-                        cute choice
-                    </small>
-
-                </div>
-
-
-                <div
-                    class="menu-card"
-                    onclick="selectItem(this,'Water 💧','drink')">
-
-                    <div class="food-icon">
-                        💧
-                    </div>
-
-                    <b>
-                        Water
-                    </b>
-
-                    <small>
-                        respect 😂
-                    </small>
-
-                </div>
-
-            </div>
-
-            <div class="buttons">
-
-                <button
-                    class="btn primary"
-                    onclick="goNextAfterChoice(8)">
-
-                    ჩავიწერეთ 🥤
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SCENE 8 — DESSERT
-    ====================================================== -->
-
-    <section
-        class="scene"
-        id="s8">
-
-        <div class="content">
-
-            <div class="eyebrow">
-                chapter 07 · dessert
-            </div>
-
-            <h2>
-                ყველაზე მნიშვნელოვანი.
-            </h2>
-
-            <p class="subtitle">
-                დესერტი. 🍰
-            </p>
-
-            <div class="menu-grid">
-
-                <div
-                    class="menu-card"
-                    onclick="selectItem(this,'Cheesecake 🍰','dessert')">
-
-                    <div class="food-icon">
-                        🍰
-                    </div>
-
-                    <b>
-                        Cheesecake
-                    </b>
-
-                </div>
-
-
-                <div
-                    class="menu-card"
-                    onclick="selectItem(this,'Ice Cream 🍦','dessert')">
-
-                    <div class="food-icon">
-                        🍦
-                    </div>
-
-                    <b>
-                        Ice Cream
-                    </b>
-
-                </div>
-
-
-                <div
-                    class="menu-card"
-                    onclick="selectItem(this,'Chocolate 🍫','dessert')">
-
-                    <div class="food-icon">
-                        🍫
-                    </div>
-
-                    <b>
-                        Chocolate
-                    </b>
-
-                </div>
-
-
-                <div
-                    class="menu-card"
-                    onclick="selectItem(this,'Strawberry 🍓','dessert')">
-
-                    <div class="food-icon">
-                        🍓
-                    </div>
-
-                    <b>
-                        Strawberry
-                    </b>
-
-                </div>
-
-
-                <div
-                    class="menu-card"
-                    onclick="selectItem(this,'Tiramisu ☕','dessert')">
-
-                    <div class="food-icon">
-                        ☕
-                    </div>
-
-                    <b>
-                        Tiramisu
-                    </b>
-
-                </div>
-
-            </div>
-
-            <div class="buttons">
-
-                <button
-                    class="btn primary"
-                    onclick="goNextAfterChoice(9)">
-
-                    ესეც ❤️
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SCENE 9 — ANGER
-    ====================================================== -->
-
-    <section
-        class="scene"
-        id="s9">
-
-        <div class="content">
-
-            <div class="eyebrow">
-                relationship status
-            </div>
-
-            <h2>
-                გაბრაზების დონე
-            </h2>
-
-            <div class="meter-wrap">
-
-                <div class="meter-label">
-
-                    <span id="angerEmoji">
-                        😡
-                    </span>
-
-                    <span id="angerText">
-                        100%
-                    </span>
-
-                </div>
-
-                <div class="meter">
-
-                    <div
-                        class="meter-fill"
-                        id="meterFill">
-                    </div>
-
-                </div>
-
-            </div>
-
-            <p class="subtitle">
-
-                კარგი...
-
-                <br>
-
-                მგონი ცოტათი
-                უკეთესობისკენ მივდივართ. 😌
-
-            </p>
-
-            <button
-                class="btn primary"
-                onclick="next(10)">
-
-                შემდეგი ეტაპი 👀
-
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SCENE 10 — QUIZ
-    ====================================================== -->
-
-    <section
-        class="scene"
-        id="s10">
-
-        <div class="content">
-
-            <div class="eyebrow">
-                chapter 08 · mini game
-            </div>
-
-            <h2>
-                რამდენად კარგად მიცნობ?
-            </h2>
-
-            <div class="quiz-card">
-
-                <p
-                    id="question"
-                    style="font-size:20px">
-
-                    რომელი უფრო მოგეწონებოდა?
-
-                </p>
-
-                <div
-                    class="answers"
-                    id="answers">
-
-                </div>
-
-            </div>
-
-            <div class="buttons">
-
-                <button
-                    class="btn primary"
-                    onclick="nextQuiz()">
-
-                    შემდეგი კითხვა →
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SCENE 11 — FUNNY QUESTION
-    ====================================================== -->
-
-    <section
-        class="scene"
-        id="s11">
-
-        <div class="content">
-
-            <div class="eyebrow">
-                important question
-            </div>
-
-            <h2>
-                ერთი რაღაც უნდა ვიცოდე...
-            </h2>
-
-            <p class="subtitle">
-                ახლა ისევ გაბრაზებული ხარ?
-            </p>
-
-            <div class="buttons">
-
-                <button
-                    class="btn"
-                    onclick="angryAnswer()">
-
-                    კი 😒
-
-                </button>
-
-                <button
-                    class="btn"
-                    onclick="softAnswer()">
-
-                    ცოტათი ❤️
-
-                </button>
-
-                <button
-                    class="btn primary"
-                    onclick="happyAnswer()">
-
-                    არა 🥹
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SCENE 12 — ENVELOPE
-    ====================================================== -->
-
-    <section
-        class="scene"
-        id="s12">
-
-        <div class="content">
-
-            <div class="eyebrow">
-                chapter 09 · secret
-            </div>
-
-            <h2>
-                ეს ბოლოსთვის შევინახე.
-            </h2>
-
-            <!-- SIMPLE ENVELOPE -->
-
-            <div
-                class="envelope"
-                id="envelope"
-                onclick="openEnvelope()">
-
-                <div class="env-body"></div>
-
-                <div class="env-flap"></div>
-
-                <div class="env-seal">
-                    ❤️
-                </div>
-
-            </div>
-
-            <p class="subtitle">
-
-                და კი...
-
-                <br>
-
-                ეს ნაწილი მართლა გულწრფელია.
-
-            </p>
-
-            <button
-                class="btn primary"
-                onclick="next(13)">
-
-                გავაგრძელოთ ❤️
-
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SCENE 13 — MEMORIES
-    ====================================================== -->
-
-    <section
-        class="scene"
-        id="s13">
-
-        <div class="content">
-
-            <div class="eyebrow">
-                chapter 10 · memories
-            </div>
-
-            <h2>
-                რამდენიმე მოგონება.
-            </h2>
-
-            <p class="subtitle">
-
-                აქ შეგიძლია მოგვიანებით
-                თქვენი ფოტოები ჩაამატო.
-
-            </p>
-
-            <div class="memory-wall">
-
-                <div
-                    class="memory"
-                    style="--r:-4deg">
-
-                    <div class="memory-photo">
-                        <img src="photo1.png" alt="Memory photo">
-                    </div>
-
-                    <p>
-                        ეს დღე მახსოვს.
-                    </p>
-
-                </div>
-
-
-                <div
-                    class="memory"
-                    style="--r:3deg">
-
-                    <div class="memory-photo">
-                        <img src="photo2.png" alt="Memory photo">
-                    </div>
-
-                    <p>
-                        ეს ღიმილი.
-                    </p>
-
-                </div>
-
-
-                <div
-                    class="memory"
-                    style="--r:-2deg">
-
-                    <div class="memory-photo">
-                        <img src="photo3.png" alt="Memory photo">
-                    </div>
-
-                    <p>
-                        ეს მომენტი.
-                    </p>
-
-                </div>
-
-
-                <div
-                    class="memory"
-                    style="--r:4deg">
-
-                    <div class="memory-photo">
-                        <img src="photo4.png" alt="Memory photo">
-                    </div>
-
-                    <p>
-                        ეს საღამო.
-                    </p>
-
-                </div>
-
-
-                <div
-                    class="memory"
-                    style="--r:-5deg">
-
-                    <div class="memory-photo">
-                        <img src="photo5.png" alt="Memory photo">
-                    </div>
-
-                    <p>
-                        ეს UFC .
-                    </p>
-
-                </div>
-
-
-                <div
-                    class="memory"
-                    style="--r:2deg">
-
-                    <div class="memory-photo">
-                        <img src="photo6.png" alt="Memory photo">
-                    </div>
-
-                    <p>
-                        და კიდევ ბევრი.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="buttons">
-
-                <button
-                    class="btn primary"
-                    onclick="next(14)">
-
-                    წავიდეთ 🌙
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SCENE 14 — WALK
-    ====================================================== -->
-
-    <section
-        class="scene"
-        id="s14">
-
-        <div class="stars"></div>
-
-        <div class="content">
-
-            <div class="eyebrow">
-                chapter 11 · night walk
-            </div>
-
-            <h2>
-                საღამო ჯერ არ დასრულებულა.
-            </h2>
-
-            <p class="subtitle">
-
-                საჭმელი — ✔
-                <br>
-
-                დესერტი — ✔
-                <br>
-
-                შერიგება — ...
-
-            </p>
-
-            <div
-                style="
-                    font-size:75px;
-                    margin:30px 0;
-                    animation:heartbeat 2s infinite;
-                ">
-
-                🌙
-
-            </div>
-
-            <p class="subtitle">
-                ერთი პატარა კითხვა დაგვრჩა.
-            </p>
-
-            <button
-                class="btn primary"
-                onclick="next(15)">
-
-                მითხარი ❤️
-
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SCENE 15 — FINAL QUESTION
-    ====================================================== -->
-
-    <section
-        class="scene"
-        id="s15">
-
-        <div class="content">
-
-            <div class="eyebrow">
-                final chapter
-            </div>
-
-            <h2>
-                ახლა ისევ გაბრაზებული ხარ?
-            </h2>
-
-            <div class="buttons">
-
-                <button
-                    class="btn"
-                    onclick="angryFinal()">
-
-                    კი 😒
-
-                </button>
-
-                <button
-                    class="btn"
-                    onclick="softFinal()">
-
-                    ცოტათი ❤️
-
-                </button>
-
-                <button
-                    class="btn primary"
-                    onclick="happyFinal()">
-
-                    არა 🥹
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SCENE 16 — COMPLETE
-    ====================================================== -->
-
-    <section
-        class="scene"
-        id="s16">
-
-        <div class="content">
-
-            <div class="final-heart">
-                ❤️
-            </div>
-
-            <div class="eyebrow">
-                mission complete
-            </div>
-
-            <h1 class="highlight">
-                0% 😡
-            </h1>
-
-            <p class="subtitle">
-
-                ერთი საღამო.
-                <br>
-
-                ორი ადამიანი.
-                <br>
-
-                და ერთი პატარა მცდელობა...
-
-            </p>
-
-            <h2>
-                რომ ისევ გაგეღიმა.
-            </h2>
-
-            <div class="buttons">
-
-                <button
-                    class="btn primary"
-                    onclick="celebrate()">
-
-                    ახლა კი წავიდეთ
-                    პაემანზე ❤️
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
+    </div>
 
 </div>
 
+</section>
 
-<!-- =========================================================
+<!-- =====================================================
+     SCENE 2
+====================================================== -->
+
+<section class="scene" id="s2">
+
+<div class="content">
+
+    <div class="eyebrow">
+        chapter 01
+    </div>
+
+    <div class="letter-intro">
+
+        <div class="letter-line">
+            მე არ მინდა უბრალოდ
+            "ბოდიში" გითხრა.
+        </div>
+
+        <div class="letter-line">
+            მინდა რაღაც გავაკეთო.
+        </div>
+
+        <div class="letter-line">
+            ამიტომ...
+        </div>
+
+        <div class="letter-line">
+            <strong class="highlight">
+                დღეს შენ გეპატიჟები.
+            </strong>
+        </div>
+
+    </div>
+
+    <div class="buttons">
+
+        <button
+            class="btn primary"
+            onclick="next(3)">
+
+            რა მოიფიქრე? 👀
+
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     SCENE 3
+====================================================== -->
+
+<section class="scene" id="s3">
+
+<div class="city"></div>
+
+<div
+    class="streetlight"
+    style="left:18%">
+</div>
+
+<div
+    class="streetlight"
+    style="left:72%">
+</div>
+
+<div class="car">
+
+    <div class="wheel w1"></div>
+    <div class="wheel w2"></div>
+
+</div>
+
+<div class="content">
+
+    <div class="eyebrow">
+        chapter 02 · tonight
+    </div>
+
+    <h2>
+        მანქანა მზად არის.
+    </h2>
+
+    <p class="subtitle">
+
+        რესტორანი — დაჯავშნილია.
+        <br>
+
+        შენი ადგილი —
+        <strong>ჩემ გვერდით.</strong>
+
+    </p>
+
+    <button
+        class="btn primary"
+        onclick="next(4)">
+
+        წავედით 🚗❤️
+
+    </button>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     SCENE 4 — PLAYLIST
+====================================================== -->
+
+<section class="scene" id="s4">
+
+<div class="stars"></div>
+
+<div class="content">
+
+    <div class="eyebrow">
+        chapter 03 · the drive
+    </div>
+
+    <h2>
+        საღამოს playlist
+    </h2>
+
+    <p class="subtitle">
+        გზასაც თავისი მუსიკა უნდა ჰქონდეს.
+    </p>
+
+    <div class="buttons">
+
+        <button
+            class="btn"
+            onclick="musicChoice('ჩვენი სიმღერა')">
+
+            🎵 ჩვენი სიმღერა
+
+        </button>
+
+        <button
+            class="btn"
+            onclick="musicChoice('მშვიდობა')">
+
+            🌙 Mood: მშვიდობა
+
+        </button>
+
+        <button
+            class="btn"
+            onclick="musicChoice('გაბრაზებული')">
+
+            😒 ჯერ კიდევ გაბრაზებული ვარ
+
+        </button>
+
+    </div>
+
+    <div class="buttons">
+
+        <button
+            class="btn primary"
+            id="musicNextBtn"
+            onclick="continueMusic()"
+            disabled>
+
+            მივედით 🚗
+
+        </button>
+
+    </div>
+
+    <p class="hint-locked" id="musicHint">
+        გააგრძელებლად ჯერ აირჩიე მუსიკა ⬆️
+    </p>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     SCENE 5
+====================================================== -->
+
+<section class="scene" id="s5">
+
+<div class="restaurant-bg"></div>
+
+<div class="content">
+
+    <div class="eyebrow">
+        chapter 04 · restaurant
+    </div>
+
+    <h2>
+        კეთილი იყოს შენი
+        <br>
+        მობრძანება.
+    </h2>
+
+    <div class="table">
+
+        <div class="chair">
+            შენი ადგილი ❤️
+        </div>
+
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+
+        <div class="chair">
+            ჩემი ადგილი 😌
+        </div>
+
+    </div>
+
+    <p class="subtitle">
+
+        მაგრამ დღეს ერთი წესია...
+
+        <br>
+
+        <strong>
+            შენ ირჩევ ყველაფერს.
+        </strong>
+
+    </p>
+
+    <button
+        class="btn primary"
+        onclick="next(6)">
+
+        დავიწყოთ 🍽️
+
+    </button>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     SCENE 6 — FOOD
+====================================================== -->
+
+<section class="scene" id="s6">
+
+<div class="content">
+
+    <div class="eyebrow">
+        chapter 05 · main course
+    </div>
+
+    <h2>
+        რას შეჭამ?
+    </h2>
+
+    <div class="menu-grid">
+
+        <div
+            class="menu-card"
+            onclick="selectItem(this,'Pizza 🍕','food')">
+
+            <div class="food-icon">
+                🍕
+            </div>
+
+            <b>Pizza</b>
+
+            <small>
+                კლასიკური არჩევანი
+            </small>
+
+        </div>
+
+        <div
+            class="menu-card"
+            onclick="selectItem(this,'Pasta 🍝','food')">
+
+            <div class="food-icon">
+                🍝
+            </div>
+
+            <b>Pasta</b>
+
+            <small>
+                იტალიური mood
+            </small>
+
+        </div>
+
+        <div
+            class="menu-card"
+            onclick="selectItem(this,'Sushi 🍣','food')">
+
+            <div class="food-icon">
+                🍣
+            </div>
+
+            <b>Sushi</b>
+
+            <small>
+                დღეს ცოტა fancy
+            </small>
+
+        </div>
+
+        <div
+            class="menu-card"
+            onclick="selectItem(this,'Burger 🍔','food')">
+
+            <div class="food-icon">
+                🍔
+            </div>
+
+            <b>Burger</b>
+
+            <small>
+                no regrets
+            </small>
+
+        </div>
+
+        <div
+            class="menu-card"
+            onclick="selectItem(this,'Steak 🥩','food')">
+
+            <div class="food-icon">
+                🥩
+            </div>
+
+            <b>Steak</b>
+
+            <small>
+                premium choice
+            </small>
+
+        </div>
+
+        <div
+            class="menu-card"
+            onclick="selectItem(this,'Fries 🍟','food')">
+
+            <div class="food-icon">
+                🍟
+            </div>
+
+            <b>Fries</b>
+
+            <small>
+                უბრალოდ იმიტომ 😂
+            </small>
+
+        </div>
+
+    </div>
+
+    <div class="buttons">
+
+        <button
+            class="btn primary"
+            id="foodNextBtn"
+            onclick="goNextAfterChoice(7)"
+            disabled>
+
+            ეს ავირჩიეთ ❤️
+
+        </button>
+
+    </div>
+
+    <p class="hint-locked" id="foodHint">
+        გააგრძელებლად ჯერ აირჩიე კერძი ⬆️
+    </p>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     SCENE 7 — DRINK
+====================================================== -->
+
+<section class="scene" id="s7">
+
+<div class="content">
+
+    <div class="eyebrow">
+        chapter 06 · drinks
+    </div>
+
+    <h2>
+        რას დავლევთ?
+    </h2>
+
+    <div class="menu-grid">
+
+        <div
+            class="menu-card"
+            onclick="selectItem(this,'Cola 🥤','drink')">
+
+            <div class="food-icon">🥤</div>
+
+            <b>Cola</b>
+
+            <small>classic</small>
+
+        </div>
+
+        <div
+            class="menu-card"
+            onclick="selectItem(this,'Lemonade 🍋','drink')">
+
+            <div class="food-icon">🍋</div>
+
+            <b>Lemonade</b>
+
+            <small>fresh</small>
+
+        </div>
+
+        <div
+            class="menu-card"
+            onclick="selectItem(this,'Juice 🧃','drink')">
+
+            <div class="food-icon">🧃</div>
+
+            <b>Juice</b>
+
+            <small>sweet choice</small>
+
+        </div>
+
+        <div
+            class="menu-card"
+            onclick="selectItem(this,'Milkshake 🥛','drink')">
+
+            <div class="food-icon">🥛</div>
+
+            <b>Milkshake</b>
+
+            <small>cute choice</small>
+
+        </div>
+
+        <div
+            class="menu-card"
+            onclick="selectItem(this,'Water 💧','drink')">
+
+            <div class="food-icon">💧</div>
+
+            <b>Water</b>
+
+            <small>respect 😂</small>
+
+        </div>
+
+    </div>
+
+    <div class="buttons">
+
+        <button
+            class="btn primary"
+            id="drinkNextBtn"
+            onclick="goNextAfterChoice(8)"
+            disabled>
+
+            ჩავიწერეთ 🥤
+
+        </button>
+
+    </div>
+
+    <p class="hint-locked" id="drinkHint">
+        გააგრძელებლად ჯერ აირჩიე სასმელი ⬆️
+    </p>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     SCENE 8 — DESSERT
+====================================================== -->
+
+<section class="scene" id="s8">
+
+<div class="content">
+
+    <div class="eyebrow">
+        chapter 07 · dessert
+    </div>
+
+    <h2>
+        ყველაზე მნიშვნელოვანი.
+    </h2>
+
+    <p class="subtitle">
+        დესერტი. 🍰
+    </p>
+
+    <div class="menu-grid">
+
+        <div
+            class="menu-card"
+            onclick="selectItem(this,'Cheesecake 🍰','dessert')">
+
+            <div class="food-icon">🍰</div>
+
+            <b>Cheesecake</b>
+
+        </div>
+
+        <div
+            class="menu-card"
+            onclick="selectItem(this,'Ice Cream 🍦','dessert')">
+
+            <div class="food-icon">🍦</div>
+
+            <b>Ice Cream</b>
+
+        </div>
+
+        <div
+            class="menu-card"
+            onclick="selectItem(this,'Chocolate 🍫','dessert')">
+
+            <div class="food-icon">🍫</div>
+
+            <b>Chocolate</b>
+
+        </div>
+
+        <div
+            class="menu-card"
+            onclick="selectItem(this,'Strawberry 🍓','dessert')">
+
+            <div class="food-icon">🍓</div>
+
+            <b>Strawberry</b>
+
+        </div>
+
+        <div
+            class="menu-card"
+            onclick="selectItem(this,'Tiramisu ☕','dessert')">
+
+            <div class="food-icon">☕</div>
+
+            <b>Tiramisu</b>
+
+        </div>
+
+    </div>
+
+    <div class="buttons">
+
+        <button
+            class="btn primary"
+            id="dessertNextBtn"
+            onclick="goNextAfterChoice(9)"
+            disabled>
+
+            ესეც ❤️
+
+        </button>
+
+    </div>
+
+    <p class="hint-locked" id="dessertHint">
+        გააგრძელებლად ჯერ აირჩიე დესერტი ⬆️
+    </p>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     SCENE 9
+====================================================== -->
+
+<section class="scene" id="s9">
+
+<div class="content">
+
+    <div class="eyebrow">
+        relationship status
+    </div>
+
+    <h2>
+        გაბრაზების დონე
+    </h2>
+
+    <div class="meter-wrap">
+
+        <div class="meter-label">
+
+            <span id="angerEmoji">
+                😡
+            </span>
+
+            <span id="angerText">
+                100%
+            </span>
+
+        </div>
+
+        <div class="meter">
+
+            <div
+                class="meter-fill"
+                id="meterFill">
+            </div>
+
+        </div>
+
+    </div>
+
+    <p class="subtitle">
+
+        კარგი...
+
+        <br>
+
+        მგონი ცოტათი
+        უკეთესობისკენ მივდივართ. 😌
+
+    </p>
+
+    <button
+        class="btn primary"
+        onclick="next(10)">
+
+        შემდეგი ეტაპი 👀
+
+    </button>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     SCENE 10 — QUIZ
+====================================================== -->
+
+<section class="scene" id="s10">
+
+<div class="content">
+
+    <div class="eyebrow">
+        chapter 08 · mini game
+    </div>
+
+    <h2>
+        რამდენად კარგად მიცნობ?
+    </h2>
+
+    <div class="quiz-card">
+
+        <p
+            id="question"
+            style="font-size:20px">
+
+            რომელი უფრო მოგეწონებოდა?
+
+        </p>
+
+        <div
+            class="answers"
+            id="answers">
+        </div>
+
+    </div>
+
+    <div class="buttons">
+
+        <button
+            class="btn primary"
+            id="quizNextBtn"
+            onclick="nextQuiz()"
+            disabled>
+
+            შემდეგი კითხვა →
+
+        </button>
+
+    </div>
+
+    <p class="hint-locked" id="quizHint">
+        გააგრძელებლად ჯერ აირჩიე პასუხი ⬆️
+    </p>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     SCENE 11
+====================================================== -->
+
+<section class="scene" id="s11">
+
+<div class="content">
+
+    <div class="eyebrow">
+        important question
+    </div>
+
+    <h2>
+        ერთი რაღაც უნდა ვიცოდე...
+    </h2>
+
+    <p class="subtitle">
+        ახლა ისევ გაბრაზებული ხარ?
+    </p>
+
+    <div class="buttons">
+
+        <button
+            class="btn"
+            onclick="angryAnswer()">
+
+            კი 😒
+
+        </button>
+
+        <button
+            class="btn"
+            onclick="softAnswer()">
+
+            ცოტათი ❤️
+
+        </button>
+
+        <button
+            class="btn primary"
+            onclick="happyAnswer()">
+
+            არა 🥹
+
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     SCENE 12
+====================================================== -->
+
+<section class="scene" id="s12">
+
+<div class="content">
+
+    <div class="eyebrow">
+        chapter 09 · secret
+    </div>
+
+    <h2>
+        ეს ბოლოსთვის შევინახე.
+    </h2>
+
+    <div
+        class="envelope"
+        id="envelope"
+        onclick="openEnvelope()">
+
+        <div class="env-body"></div>
+
+        <div class="env-flap"></div>
+
+        <div class="env-seal">
+            ❤️
+        </div>
+
+    </div>
+
+    <p class="subtitle">
+
+        და კი...
+
+        <br>
+
+        ეს ნაწილი მართლა გულწრფელია.
+
+    </p>
+
+    <button
+        class="btn primary"
+        id="envelopeNextBtn"
+        onclick="continueFromEnvelope()"
+        disabled>
+
+        გავაგრძელოთ ❤️
+
+    </button>
+
+    <p class="hint-locked" id="envelopeHint">
+        გააგრძელებლად ჯერ გახსენი წერილი ⬆️
+    </p>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     SCENE 13 — 4 PHOTOS
+====================================================== -->
+
+<section class="scene" id="s13">
+
+<div class="content">
+
+    <div class="eyebrow">
+        chapter 10 · memories
+    </div>
+
+    <h2>
+        რამდენიმე მოგონება.
+    </h2>
+
+    <p class="subtitle">
+        ოთხი პატარა მოგონება.
+    </p>
+
+    <div class="memory-wall">
+
+        <div
+            class="memory"
+            style="--r:-4deg">
+
+            <div class="memory-photo">
+                <img
+                    src="photo1.png"
+                    alt="Memory photo 1">
+            </div>
+
+            <p>
+                ეს დღე მახსოვს.
+            </p>
+
+        </div>
+
+
+        <div
+            class="memory"
+            style="--r:3deg">
+
+            <div class="memory-photo">
+                <img
+                    src="photo2.png"
+                    alt="Memory photo 2">
+            </div>
+
+            <p>
+                ეს ღიმილი.
+            </p>
+
+        </div>
+
+
+        <div
+            class="memory"
+            style="--r:-2deg">
+
+            <div class="memory-photo">
+                <img
+                    src="photo3.png"
+                    alt="Memory photo 3">
+            </div>
+
+            <p>
+                ეს მომენტი.
+            </p>
+
+        </div>
+
+
+        <div
+            class="memory"
+            style="--r:4deg">
+
+            <div class="memory-photo">
+                <img
+                    src="photo4.png"
+                    alt="Memory photo 4">
+            </div>
+
+            <p>
+                ეს საღამო.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="buttons">
+
+        <button
+            class="btn primary"
+            onclick="next(14)">
+
+            წავიდეთ 🌙
+
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     SCENE 14
+====================================================== -->
+
+<section class="scene" id="s14">
+
+<div class="stars"></div>
+
+<div class="content">
+
+    <div class="eyebrow">
+        chapter 11 · night walk
+    </div>
+
+    <h2>
+        საღამო ჯერ არ დასრულებულა.
+    </h2>
+
+    <p class="subtitle">
+
+        საჭმელი — ✔
+        <br>
+
+        დესერტი — ✔
+        <br>
+
+        შერიგება — ...
+
+    </p>
+
+    <div
+        style="
+            font-size:75px;
+            margin:30px 0;
+            animation:heartbeat 2s infinite;
+        ">
+
+        🌙
+
+    </div>
+
+    <p class="subtitle">
+        ერთი პატარა კითხვა დაგვრჩა.
+    </p>
+
+    <button
+        class="btn primary"
+        onclick="next(15)">
+
+        მითხარი ❤️
+
+    </button>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     SCENE 15
+====================================================== -->
+
+<section class="scene" id="s15">
+
+<div class="content">
+
+    <div class="eyebrow">
+        final chapter
+    </div>
+
+    <h2>
+        ახლა ისევ გაბრაზებული ხარ?
+    </h2>
+
+    <div class="buttons">
+
+        <button
+            class="btn"
+            onclick="angryFinal()">
+
+            კი 😒
+
+        </button>
+
+        <button
+            class="btn"
+            onclick="softFinal()">
+
+            ცოტათი ❤️
+
+        </button>
+
+        <button
+            class="btn primary"
+            onclick="happyFinal()">
+
+            არა 🥹
+
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     SCENE 16
+====================================================== -->
+
+<section class="scene" id="s16">
+
+<div class="content">
+
+    <div class="final-heart">
+        ❤️
+    </div>
+
+    <div class="eyebrow">
+        mission complete
+    </div>
+
+    <h1 class="highlight">
+        0% 😡
+    </h1>
+
+    <p class="subtitle">
+
+        ერთი საღამო.
+        <br>
+
+        ორი ადამიანი.
+        <br>
+
+        და ერთი პატარა მცდელობა...
+
+    </p>
+
+    <h2>
+        რომ ისევ გაგეღიმა.
+    </h2>
+
+    <div class="buttons">
+
+        <button
+            class="btn primary"
+            onclick="celebrate()">
+
+            ახლა კი წავიდეთ
+            პაემანზე ❤️
+
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+</div>
+
+<!-- =====================================================
      LETTER MODAL
-========================================================== -->
+====================================================== -->
 
 <div
     class="letter-modal"
     id="letterModal">
 
-    <div
-        class="letter-backdrop"
+<div
+    class="letter-backdrop"
+    onclick="closeLetter()">
+</div>
+
+<div class="letter-window">
+
+    <button
+        class="letter-close"
+        onclick="closeLetter()"
+        aria-label="დახურვა">
+
+        ×
+
+    </button>
+
+    <div class="letter-icon">
+        💌
+    </div>
+
+    <div class="letter-eyebrow">
+        პატარა წერილი შენთვის
+    </div>
+
+    <h2>
+        ერთი რამ უნდა იცოდე...
+    </h2>
+
+    <div class="letter-divider">
+        <span>♡</span>
+    </div>
+
+    <div class="letter-text">
+
+        <p>
+            შეიძლება ყოველთვის სწორად ვერ ვიქცევი.
+        </p>
+
+        <p>
+            შეიძლება ხანდახან გაგაბრაზო.
+        </p>
+
+        <p>
+            მაგრამ ერთი რამ ზუსტად ვიცი...
+        </p>
+
+        <p class="letter-special">
+
+            შენი გაღიმება ჩემთვის
+            ძალიან მნიშვნელოვანია. ❤️
+
+        </p>
+
+    </div>
+
+    <button
+        class="btn primary letter-button"
         onclick="closeLetter()">
-    </div>
 
-    <div class="letter-window">
+        გავაგრძელოთ ❤️
 
-        <button
-            class="letter-close"
-            onclick="closeLetter()"
-            aria-label="დახურვა">
-
-            ×
-
-        </button>
-
-        <div class="letter-icon">
-            💌
-        </div>
-
-        <div class="letter-eyebrow">
-            პატარა წერილი შენთვის
-        </div>
-
-        <h2>
-            ერთი რამ უნდა იცოდე...
-        </h2>
-
-        <div class="letter-divider">
-            <span>♡</span>
-        </div>
-
-        <div class="letter-text">
-
-            <p>
-                შეიძლება ყოველთვის სწორად ვერ ვიქცევი.
-            </p>
-
-            <p>
-                შეიძლება ხანდახან გაგაბრაზო.
-            </p>
-
-            <p>
-                მაგრამ ერთი რამ ზუსტად ვიცი...
-            </p>
-
-            <p class="letter-special">
-
-                შენი გაღიმება ჩემთვის
-                ძალიან მნიშვნელოვანია. ❤️
-
-            </p>
-
-        </div>
-
-        <button
-            class="btn primary letter-button"
-            onclick="closeLetter()">
-
-            გავაგრძელოთ ❤️
-
-        </button>
-
-    </div>
+    </button>
 
 </div>
 
+</div>
 
 <div
     class="toast"
     id="toast">
 </div>
-
 
 <script>
 
@@ -3278,64 +2952,140 @@ state.scene ??= 1;
 state.music ??= null;
 state.quizAnswers ??= [];
 state.responses ??= [];
+state.funnyAnswer ??= null;
+state.finalAnswer ??= null;
+state.envelopeOpened ??= false;
 
-// ყოველი არჩევანი ინახება და მაშინვე იგზავნება Formspree-ზე
-function trackResponse(category, value){
+
+/* =========================================================
+   FORMSPREE
+========================================================= */
+
+function trackResponse(category,value){
 
     state.responses.push({
         category,
         value,
-        time: new Date().toLocaleString()
+        time:new Date().toLocaleString()
     });
 
     save();
 
-    // ყოველი დაჭერის/არჩევანის შემდეგ იგზავნება სრული მიმდინარე ინფორმაცია
-    sendToFormspree(value, category);
+    sendToFormspree(value,category);
 }
 
-async function sendToFormspree(lastValue = "", category = "განახლება"){
+
+async function sendToFormspree(
+    lastValue="",
+    category="განახლება"
+){
 
     const payload = {
-        "მოქმედება": category,
-        "ბოლო არჩევანი": lastValue || state.finalAnswer || "არ არის",
-        "არჩეული საჭმელი": state.food || "არ აურჩევია",
-        "არჩეული სასმელი": state.drink || "არ აურჩევია",
-        "არჩეული დესერტი": state.dessert || "არ აურჩევია",
-        "არჩეული მუსიკა": state.music || "არ აურჩევია",
-        "ქვიზის პასუხები": state.quizAnswers.join(" | ") || "არ არის",
-        "სასაცილო კითხვის პასუხი": state.funnyAnswer || "არ არის",
-        "საბოლოო პასუხი": state.finalAnswer || "ჯერ არ არის",
-        "გაბრაზების დონე": state.anger + "%",
-        "ყველა მოქმედება": state.responses.map(x =>
-            `${x.time} — ${x.category}: ${x.value}`
-        ).join("\n")
+
+        "მოქმედება":
+            category,
+
+        "ბოლო არჩევანი":
+            lastValue ||
+            state.finalAnswer ||
+            "არ არის",
+
+        "არჩეული საჭმელი":
+            state.food ||
+            "არ აურჩევია",
+
+        "არჩეული სასმელი":
+            state.drink ||
+            "არ აურჩევია",
+
+        "არჩეული დესერტი":
+            state.dessert ||
+            "არ აურჩევია",
+
+        "არჩეული მუსიკა":
+            state.music ||
+            "არ აურჩევია",
+
+        "ქვიზის პასუხები":
+            state.quizAnswers.join(" | ") ||
+            "არ არის",
+
+        "სასაცილო კითხვის პასუხი":
+            state.funnyAnswer ||
+            "არ არის",
+
+        "საბოლოო პასუხი":
+            state.finalAnswer ||
+            "ჯერ არ არის",
+
+        "გაბრაზების დონე":
+            state.anger + "%",
+
+        "ყველა მოქმედება":
+            state.responses
+                .map(x =>
+                    `${x.time} — ${x.category}: ${x.value}`
+                )
+                .join("\n")
     };
 
     try{
-        const response = await fetch("https://formspree.io/f/", {
-            method: "POST",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
-        });
+
+        const response =
+            await fetch(
+                "https://formspree.io/f/xvkgbvej",
+                {
+                    method:"POST",
+
+                    headers:{
+                        "Accept":
+                            "application/json",
+
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:
+                        JSON.stringify(payload)
+                }
+            );
 
         if(!response.ok){
-            const errorText = await response.text();
-            console.error("Formspree პასუხი:", response.status, errorText);
+
+            const errorText =
+                await response.text();
+
+            console.error(
+                "Formspree პასუხი:",
+                response.status,
+                errorText
+            );
+
             return false;
         }
 
-        console.log("Formspree: ინფორმაცია წარმატებით გაიგზავნა", payload);
+        console.log(
+            "Formspree: ინფორმაცია წარმატებით გაიგზავნა",
+            payload
+        );
+
         return true;
 
     }catch(error){
-        console.error("Formspree error:", error);
+
+        console.error(
+            "Formspree error:",
+            error
+        );
+
         return false;
     }
 }
+
+
+/* =========================================================
+   SAVE
+========================================================= */
 
 function save(){
 
@@ -3389,17 +3139,12 @@ function next(number){
     });
 
     if(number===9){
-
         updateAnger();
-
     }
 
     if(number===10){
-
         renderQuiz();
-
     }
-
 }
 
 
@@ -3437,11 +3182,8 @@ function createStars(){
                     (2 + Math.random()*4) + "s";
 
                 container.appendChild(star);
-
             }
-
         });
-
 }
 
 createStars();
@@ -3456,9 +3198,7 @@ let toastTimer;
 function toast(message){
 
     const el =
-        document.getElementById(
-            "toast"
-        );
+        document.getElementById("toast");
 
     el.textContent=message;
 
@@ -3468,11 +3208,8 @@ function toast(message){
 
     toastTimer =
         setTimeout(()=>{
-
             el.classList.remove("show");
-
         },2400);
-
 }
 
 
@@ -3482,8 +3219,24 @@ function toast(message){
 
 function musicChoice(choice){
 
-    state.music = choice;
-    trackResponse("მუსიკა", choice);
+    state.music=choice;
+
+    save();
+
+    const nextBtn =
+        document.getElementById("musicNextBtn");
+
+    if(nextBtn) nextBtn.disabled=false;
+
+    const hint =
+        document.getElementById("musicHint");
+
+    if(hint) hint.style.display="none";
+
+    trackResponse(
+        "მუსიკა",
+        choice
+    );
 
     if(choice==="გაბრაზებული"){
 
@@ -3496,15 +3249,45 @@ function musicChoice(choice){
         toast(
             "კარგი არჩევანია. 🎵❤️"
         );
+    }
+}
 
+
+/*
+   მუსიკის არჩევის გარეშე Scene 4-დან
+   Scene 5-ზე გადასვლა შეუძლებელია.
+*/
+
+function continueMusic(){
+
+    if(!state.music){
+
+        toast(
+            "ჯერ მუსიკა აირჩიე 🎵❤️"
+        );
+
+        return;
     }
 
+    next(5);
 }
 
 
 /* =========================================================
    MENU
 ========================================================= */
+
+const nextBtnByType = {
+    food:"foodNextBtn",
+    drink:"drinkNextBtn",
+    dessert:"dessertNextBtn"
+};
+
+const hintByType = {
+    food:"foodHint",
+    drink:"drinkHint",
+    dessert:"dessertHint"
+};
 
 function selectItem(
     element,
@@ -3525,36 +3308,54 @@ function selectItem(
 
     state[type]=item;
 
-    trackResponse(type, item);
+    save();
+
+    const btnId = nextBtnByType[type];
+
+    if(btnId){
+
+        const btn =
+            document.getElementById(btnId);
+
+        if(btn) btn.disabled=false;
+    }
+
+    const hintId = hintByType[type];
+
+    if(hintId){
+
+        const hint =
+            document.getElementById(hintId);
+
+        if(hint) hint.style.display="none";
+    }
+
+    trackResponse(
+        type,
+        item
+    );
 
     if(type==="food"){
-
         reduceAnger(18);
-
     }
 
     if(type==="drink"){
-
         reduceAnger(10);
-
     }
 
     if(type==="dessert"){
-
         reduceAnger(15);
-
     }
 
     toast(
         item + " — არჩეულია ❤️"
     );
-
 }
 
 
 function goNextAfterChoice(scene){
 
-    if(state.scene===6 && !state.food){
+    if(scene===7 && !state.food){
 
         toast(
             "ჯერ საჭმელი აირჩიე 😌"
@@ -3563,7 +3364,7 @@ function goNextAfterChoice(scene){
         return;
     }
 
-    if(state.scene===7 && !state.drink){
+    if(scene===8 && !state.drink){
 
         toast(
             "სასმელიც ავარჩიოთ 😌"
@@ -3572,7 +3373,7 @@ function goNextAfterChoice(scene){
         return;
     }
 
-    if(state.scene===8 && !state.dessert){
+    if(scene===9 && !state.dessert){
 
         toast(
             "დესერტი დაგვრჩა 🍰"
@@ -3582,7 +3383,6 @@ function goNextAfterChoice(scene){
     }
 
     next(scene);
-
 }
 
 
@@ -3601,7 +3401,6 @@ function reduceAnger(amount){
     save();
 
     updateAnger();
-
 }
 
 
@@ -3653,9 +3452,7 @@ function updateAnger(){
     }else{
 
         emoji.textContent="❤️";
-
     }
-
 }
 
 
@@ -3721,6 +3518,15 @@ function renderQuiz(){
             `)
             .join("");
 
+    const nextBtn =
+        document.getElementById("quizNextBtn");
+
+    if(nextBtn) nextBtn.disabled=true;
+
+    const hint =
+        document.getElementById("quizHint");
+
+    if(hint) hint.style.display="";
 }
 
 
@@ -3738,15 +3544,31 @@ function answerQuiz(element){
         "selected"
     );
 
-    state.quizAnswers[quizIndex] = element.textContent.trim();
-    trackResponse("ქვიზი", `კითხვა ${quizIndex + 1}: ${element.textContent.trim()}`);
+    state.quizAnswers[quizIndex] =
+        element.textContent.trim();
+
+    save();
+
+    const nextBtn =
+        document.getElementById("quizNextBtn");
+
+    if(nextBtn) nextBtn.disabled=false;
+
+    const hint =
+        document.getElementById("quizHint");
+
+    if(hint) hint.style.display="none";
+
+    trackResponse(
+        "ქვიზი",
+        `კითხვა ${quizIndex + 1}: ${element.textContent.trim()}`
+    );
 
     reduceAnger(5);
 
     toast(
         "ჩავინიშნე 😌❤️"
     );
-
 }
 
 
@@ -3764,7 +3586,6 @@ function nextQuiz(){
         );
 
         return;
-
     }
 
     quizIndex++;
@@ -3785,11 +3606,9 @@ function nextQuiz(){
         },700);
 
         return;
-
     }
 
     renderQuiz();
-
 }
 
 
@@ -3799,8 +3618,13 @@ function nextQuiz(){
 
 function angryAnswer(){
 
-    state.funnyAnswer = "კი 😒";
-    trackResponse("კითხვა: ისევ გაბრაზებული ხარ?", state.funnyAnswer);
+    state.funnyAnswer =
+        "კი 😒";
+
+    trackResponse(
+        "კითხვა: ისევ გაბრაზებული ხარ?",
+        state.funnyAnswer
+    );
 
     toast(
         "კარგი... კიდევ ერთი მცდელობა 😭"
@@ -3811,14 +3635,18 @@ function angryAnswer(){
         next(12);
 
     },800);
-
 }
 
 
 function softAnswer(){
 
-    state.funnyAnswer = "ცოტათი ❤️";
-    trackResponse("კითხვა: ისევ გაბრაზებული ხარ?", state.funnyAnswer);
+    state.funnyAnswer =
+        "ცოტათი ❤️";
+
+    trackResponse(
+        "კითხვა: ისევ გაბრაზებული ხარ?",
+        state.funnyAnswer
+    );
 
     reduceAnger(15);
 
@@ -3831,14 +3659,18 @@ function softAnswer(){
         next(12);
 
     },800);
-
 }
 
 
 function happyAnswer(){
 
-    state.funnyAnswer = "არა 🥹";
-    trackResponse("კითხვა: ისევ გაბრაზებული ხარ?", state.funnyAnswer);
+    state.funnyAnswer =
+        "არა 🥹";
+
+    trackResponse(
+        "კითხვა: ისევ გაბრაზებული ხარ?",
+        state.funnyAnswer
+    );
 
     state.anger=0;
 
@@ -3853,7 +3685,6 @@ function happyAnswer(){
         next(12);
 
     },800);
-
 }
 
 
@@ -3868,15 +3699,30 @@ function openEnvelope(){
             "letterModal"
         );
 
-    modal.classList.add(
-        "show"
+    modal.classList.add("show");
+
+    state.envelopeOpened=true;
+
+    save();
+
+    const nextBtn =
+        document.getElementById("envelopeNextBtn");
+
+    if(nextBtn) nextBtn.disabled=false;
+
+    const hint =
+        document.getElementById("envelopeHint");
+
+    if(hint) hint.style.display="none";
+
+    trackResponse(
+        "წერილი",
+        "წერილი გაიხსნა"
     );
 
     reduceAnger(20);
 
-    document.body.style.overflow=
-        "hidden";
-
+    document.body.style.overflow="hidden";
 }
 
 
@@ -3887,17 +3733,31 @@ function closeLetter(){
             "letterModal"
         );
 
-    modal.classList.remove(
-        "show"
-    );
+    modal.classList.remove("show");
 
-    document.body.style.overflow=
-        "";
+    document.body.style.overflow="";
 
-    toast(
-        "❤️"
-    );
+    toast("❤️");
+}
 
+
+/*
+   წერილის გახსნის გარეშე
+   შემდეგ სცენაზე გადასვლა შეუძლებელია.
+*/
+
+function continueFromEnvelope(){
+
+    if(!state.envelopeOpened){
+
+        toast(
+            "ჯერ წერილი გახსენი 💌"
+        );
+
+        return;
+    }
+
+    next(13);
 }
 
 
@@ -3916,7 +3776,6 @@ document.addEventListener(
             closeLetter();
 
         }
-
     }
 );
 
@@ -3927,9 +3786,13 @@ document.addEventListener(
 
 function angryFinal(){
 
-    state.finalAnswer = "ჯერ კიდევ გაბრაზებული ვარ";
-    trackResponse("საბოლოო პასუხი", state.finalAnswer);
-    sendToFormspree(state.finalAnswer, "საბოლოო პასუხი");
+    state.finalAnswer =
+        "ჯერ კიდევ გაბრაზებული ვარ";
+
+    trackResponse(
+        "საბოლოო პასუხი",
+        state.finalAnswer
+    );
 
     toast(
         "კარგი... დანებებას არ ვაპირებ 😭"
@@ -3940,15 +3803,18 @@ function angryFinal(){
         next(12);
 
     },900);
-
 }
 
 
 function softFinal(){
 
-    state.finalAnswer = "ცოტათი ❤️";
-    trackResponse("საბოლოო პასუხი", state.finalAnswer);
-    sendToFormspree(state.finalAnswer, "საბოლოო პასუხი");
+    state.finalAnswer =
+        "ცოტათი ❤️";
+
+    trackResponse(
+        "საბოლოო პასუხი",
+        state.finalAnswer
+    );
 
     state.anger=10;
 
@@ -3963,15 +3829,18 @@ function softFinal(){
         next(16);
 
     },800);
-
 }
 
 
 function happyFinal(){
 
-    state.finalAnswer = "არა 🥹❤️";
-    trackResponse("საბოლოო პასუხი", state.finalAnswer);
-    sendToFormspree(state.finalAnswer, "საბოლოო პასუხი");
+    state.finalAnswer =
+        "არა 🥹❤️";
+
+    trackResponse(
+        "საბოლოო პასუხი",
+        state.finalAnswer
+    );
 
     state.anger=0;
 
@@ -3984,7 +3853,6 @@ function happyFinal(){
         next(16);
 
     },700);
-
 }
 
 
@@ -4046,17 +3914,20 @@ function createConfetti(){
             element.remove();
 
         },4500);
-
     }
-
 }
 
 
 function celebrate(){
 
-    state.finalAnswer = state.finalAnswer || "MISSION COMPLETE ❤️";
-    trackResponse("დასრულება", state.finalAnswer);
-    sendToFormspree(state.finalAnswer, "საბოლოო პასუხი");
+    state.finalAnswer =
+        state.finalAnswer ||
+        "MISSION COMPLETE ❤️";
+
+    trackResponse(
+        "დასრულება",
+        state.finalAnswer
+    );
 
     createConfetti();
 
@@ -4071,7 +3942,6 @@ function celebrate(){
         );
 
     },2300);
-
 }
 
 
