@@ -1596,6 +1596,7 @@ h2{
 }
 
 .toast.show{
+
     opacity:1;
 
     transform:
@@ -3255,8 +3256,8 @@ function musicChoice(choice){
 
 
 /*
-   მუსიკის არჩევის გარეშე Scene 4-დან
-   Scene 5-ზე გადასვლა შეუძლებელია.
+   მუსიკის არჩევის გარეშე
+   Scene 4-დან Scene 5-ზე გადასვლა შეუძლებელია.
 */
 
 function continueMusic(){
@@ -3391,12 +3392,21 @@ function goNextAfterChoice(scene){
    ANGER
 ========================================================= */
 
+/*
+   FIX: აქ იყო ბაგი — ფუნქცია ყოველთვის
+   ფიქსირებულ 20-ს აკლებდა state.anger-ს,
+   მიღებული "amount" პარამეტრს საერთოდ
+   არ იყენებდა. ახლა რეალურად "amount"-ს
+   აკლებს, ისე როგორც ყოველი გამოძახება
+   მოითხოვს (18, 10, 15, 5, 20 და ა.შ.).
+*/
+
 function reduceAnger(amount){
 
     state.anger =
         Math.max(
             0,
-            state.anger - 20
+            state.anger - amount
         );
 
     save();
@@ -3677,6 +3687,8 @@ function happyAnswer(){
 
     save();
 
+    updateAnger();
+
     toast(
         "ეს უკვე კარგი ამბავია 🥹❤️"
     );
@@ -3821,6 +3833,8 @@ function softFinal(){
 
     save();
 
+    updateAnger();
+
     toast(
         "ანუ ჯერ კიდევ მაქვს შანსი ❤️"
     );
@@ -3846,6 +3860,8 @@ function happyFinal(){
     state.anger=0;
 
     save();
+
+    updateAnger();
 
     createConfetti();
 
