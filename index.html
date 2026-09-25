@@ -3396,7 +3396,7 @@ function reduceAnger(amount){
     state.anger =
         Math.max(
             0,
-            state.anger - amount
+            state.anger - 20
         );
 
     save();
@@ -3817,7 +3817,7 @@ function softFinal(){
         state.finalAnswer
     );
 
-    state.anger=10;
+    state.anger=20;
 
     save();
 
